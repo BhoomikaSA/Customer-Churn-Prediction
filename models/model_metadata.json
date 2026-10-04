@@ -1,0 +1,41 @@
+{
+    "model_type": "RandomForestClassifier",
+    "target": "Churn",
+    "numerical_features": [
+        "SeniorCitizen",
+        "tenure",
+        "MonthlyCharges",
+        "TotalCharges"
+    ],
+    "categorical_features": [
+        "gender",
+        "Partner",
+        "Dependents",
+        "PhoneService",
+        "MultipleLines",
+        "InternetService",
+        "OnlineSecurity",
+        "OnlineBackup",
+        "DeviceProtection",
+        "TechSupport",
+        "StreamingTV",
+        "StreamingMovies",
+        "Contract",
+        "PaperlessBilling",
+        "PaymentMethod"
+    ],
+    "best_parameters": {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_split": 5,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced"
+    },
+    "test_metrics": {
+        "Accuracy": 0.7399,
+        "Precision": 0.5067,
+        "Recall": 0.8128,
+        "F1": 0.6242,
+        "ROC-AUC": 0.8383
+    }
+}
