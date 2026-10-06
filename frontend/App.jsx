@@ -54,7 +54,7 @@ function App() {
 
     const checkApiHealth = async () => {
         try {
-            const res = await fetch("http://127.0.0.1:8000/health");
+            const res = await fetch("https://churniq-api-cds0.onrender.com/health");
             if (res.ok) setApiConnected(true);
             else setApiConnected(false);
         } catch {
@@ -140,7 +140,7 @@ function App() {
         setPredictionResult(null);
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/predict", {
+            const response = await fetch("https://churniq-api-cds0.onrender.com/predict", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
@@ -167,7 +167,7 @@ function App() {
 
             setHistory(prev => [newHistoryItem, ...prev]);
         } catch (err) {
-            setPredictError(err.message + " - Ensure FastAPI server is running at http://127.0.0.1:8000");
+            setPredictError(err.message + " - Ensure FastAPI server is running at https://churniq-api-cds0.onrender.com");
         } finally {
             setPredicting(false);
         }
@@ -1063,7 +1063,7 @@ function AboutPage() {
                 <h3 className="form-section-title"><i className="fa-solid fa-code me-2 text-indigo"></i>REST API Documentation (POST /predict)</h3>
                 
                 <div style={{ background: "rgba(15,23,42,0.8)", border: "1px solid var(--border-color)", padding: "1rem", borderRadius: "8px", fontFamily: "monospace", fontSize: "0.85rem", color: "#a5b4fc", margin: "1rem 0" }}>
-                    POST http://127.0.0.1:8000/predict
+                    POST https://churniq-api-cds0.onrender.com/predict
                 </div>
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1rem" }}>
@@ -1122,7 +1122,7 @@ function SettingsPage({ apiConnected, checkApiHealth, theme, toggleTheme }) {
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", margin: "1rem 0" }}>
                     <div>
                         <div style={{ fontWeight: 600 }}>FastAPI Server URL</div>
-                        <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>http://127.0.0.1:8000</div>
+                        <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>https://churniq-api-cds0.onrender.com</div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                         <span className={`badge-risk ${apiConnected ? 'low' : 'high'}`}>
