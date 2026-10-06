@@ -3,7 +3,7 @@
 # Stage 10: Containerization & Cloud Deployment
 # ============================================
 
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Prevent Python from writing .pyc files & enable unbuffered logging
 ENV PYTHONDONTWRITEBYTECODE=1
